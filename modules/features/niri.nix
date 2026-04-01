@@ -24,7 +24,7 @@
           # Apps
           "Mod+Return".spawn-sh = lib.getExe pkgs.kitty;
           "Mod+B".spawn-sh = lib.getExe pkgs.brave;
-          "Mod+V".spawn-sh = lib.getExe pkgs.vscode;
+          "Mod+V".spawn-sh = "code";
           "Mod+S".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
           "Mod+E".spawn-sh = "kitty lf";
 
