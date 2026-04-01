@@ -31,8 +31,14 @@
       LC_TIME = "en_IN";
     };
 
-    # Niri
-    programs.niri.enable = true;
+    # Login manager (replaces TTY login)
+    services.greetd = {
+      enable = true;
+      settings.default_session = {
+        command = "${pkgs.niri}/bin/niri-session";
+        user = "mr_fool";
+      };
+    };
 
     # Keymap
     services.xserver.xkb = {
@@ -136,6 +142,8 @@
       nftables tcpdump nmap bettercap netcat
       wireshark rpi-imager putty openssh bind nettools
       xwayland-satellite
+      playerctl      # media keys
+      brightnessctl  # brightness keys
     ];
 
     system.stateVersion = "25.11";
