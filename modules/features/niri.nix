@@ -10,8 +10,6 @@
     packages.myNiri = inputs.wrapper-modules.wrappers.niri.wrap {
       inherit pkgs;
       settings = {
-        v2-settings = true;
-
         spawn-at-startup = [
           (lib.getExe self'.packages.myNoctalia)
         ];
@@ -91,7 +89,6 @@
 
           # System
           "Mod+Shift+Q".quit = {};
-          "Mod+Shift+R".reload-config = {};
         };
       };
     };
