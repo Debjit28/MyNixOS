@@ -95,18 +95,3 @@
     };
   };
 }
-```
-
-The brace structure is:
-```
-{ ... }: {          # flake module
-  flake... { };     # nixos module
-  perSystem... {    # perSystem
-    wrap {          # wrap
-      settings = {  # settings
-        binds = {   # binds
-        };          # close binds
-      };            # close settings
-    };              # close wrap
-  };                # close perSystem
-}                   # close flake module
