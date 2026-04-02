@@ -27,16 +27,15 @@
       LC_TELEPHONE = "en_IN";
       LC_TIME = "en_IN";
     };
-
-    # Login manager
     services.greetd = {
       enable = true;
       settings.default_session = {
-        command = "${pkgs.greetd.regreet}/bin/regreet";
+        command = "${pkgs.cage}/bin/cage -s -- ${pkgs.greetd.regreet}/bin/regreet";
         user = "greeter";
       };
     };
     programs.regreet.enable = true;
+    
 
     services.xserver.xkb = {
       layout = "us";
@@ -137,6 +136,7 @@
       xwayland-satellite
       playerctl
       brightnessctl
+      cage
     ];
 
     system.stateVersion = "25.11";
