@@ -7,16 +7,13 @@
       self.nixosModules.niri
     ];
 
-    # Bootloader
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
 
-    # Networking
     networking.hostName = "MrFool";
     networking.networkmanager.enable = true;
     networking.firewall.allowedTCPPorts = [ 22 ];
 
-    # Time & locale
     time.timeZone = "Asia/Kolkata";
     i18n.defaultLocale = "en_IN";
     i18n.extraLocaleSettings = {
@@ -31,22 +28,21 @@
       LC_TIME = "en_IN";
     };
 
-    # Login manager (replaces TTY login)
+    # Login manager
     services.greetd = {
       enable = true;
       settings.default_session = {
-        command = "${pkgs.niri}/bin/niri-session";
-        user = "mr_fool";
+        command = "${pkgs.greetd.regreet}/bin/regreet";
+        user = "greeter";
       };
     };
+    programs.regreet.enable = true;
 
-    # Keymap
     services.xserver.xkb = {
       layout = "us";
       variant = "";
     };
 
-    # Fonts
     fonts = {
       enableDefaultPackages = true;
       packages = with pkgs; [
@@ -54,7 +50,6 @@
       ];
     };
 
-    # Audio
     services.pulseaudio.enable = false;
     security.rtkit.enable = true;
     services.pipewire = {
@@ -64,7 +59,6 @@
       pulse.enable = true;
     };
 
-    # User
     users.users.mr_fool = {
       isNormalUser = true;
       description = "Mr Fool";
@@ -72,7 +66,6 @@
       shell = pkgs.zsh;
     };
 
-    # Zsh
     programs.zsh = {
       enable = true;
       autosuggestions.enable = true;
@@ -142,8 +135,8 @@
       nftables tcpdump nmap bettercap netcat
       wireshark rpi-imager putty openssh bind nettools
       xwayland-satellite
-      playerctl      # media keys
-      brightnessctl  # brightness keys
+      playerctl
+      brightnessctl
     ];
 
     system.stateVersion = "25.11";
