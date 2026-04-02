@@ -27,6 +27,8 @@
       LC_TELEPHONE = "en_IN";
       LC_TIME = "en_IN";
     };
+
+    # Login manager
     services.greetd = {
       enable = true;
       settings.default_session = {
@@ -34,8 +36,58 @@
         user = "greeter";
       };
     };
-    programs.regreet.enable = true;
-    
+
+    programs.regreet = {
+      enable = true;
+      theme = {
+        name = "Adwaita-dark";
+        package = pkgs.gnome-themes-extra;
+      };
+      iconTheme = {
+        name = "Papirus-Dark";
+        package = pkgs.papirus-icon-theme;
+      };
+      font = {
+        name = "JetBrainsMono Nerd Font";
+        size = 16;
+      };
+      extraCss = ''
+        window {
+          background-image: url("file:///etc/greetd/wallpaper.jpg");
+          background-size: cover;
+          background-position: center;
+        }
+        box#main_box {
+          background-color: rgba(0, 0, 0, 0.5);
+          border-radius: 16px;
+          padding: 32px;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        entry {
+          background-color: rgba(255, 255, 255, 0.1);
+          border-radius: 8px;
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          color: white;
+          padding: 8px;
+        }
+        button {
+          background-color: rgba(100, 150, 255, 0.7);
+          border-radius: 8px;
+          color: white;
+          border: none;
+          padding: 8px 16px;
+        }
+        button:hover {
+          background-color: rgba(100, 150, 255, 0.9);
+        }
+        label {
+          color: white;
+        }
+      '';
+    };
+
+    # Wallpaper for login screen
+    environment.etc."greetd/wallpaper.jpg".source = ./wallpaper.jpg;
 
     services.xserver.xkb = {
       layout = "us";
@@ -133,10 +185,8 @@
       brave postgresql_16
       nftables tcpdump nmap bettercap netcat
       wireshark rpi-imager putty openssh bind nettools
-      xwayland-satellite
-      playerctl
-      brightnessctl
-      cage
+      xwayland-satellite playerctl brightnessctl cage
+      papirus-icon-theme gnome-themes-extra
     ];
 
     system.stateVersion = "25.11";
