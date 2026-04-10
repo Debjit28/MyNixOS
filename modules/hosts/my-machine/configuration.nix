@@ -187,7 +187,7 @@
       wireshark rpi-imager putty openssh bind nettools
       xwayland-satellite playerctl brightnessctl cage
       papirus-icon-theme gnome-themes-extra metasploit
-      nmap
+      nmap inetutils
     ];
 
     system.stateVersion = "25.11";
