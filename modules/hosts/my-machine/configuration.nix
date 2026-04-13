@@ -127,6 +127,16 @@
         plugins = [ "git" "sudo" "history" ];
       };
     };
+    programs.nix-ld = {
+      enable = true;
+      libraries = with pkgs; [
+        stdenv.cc.cc
+        zlib
+        SDL2
+        libGL
+        libx11
+      ];
+    };
 
     programs.starship = {
       enable = true;
