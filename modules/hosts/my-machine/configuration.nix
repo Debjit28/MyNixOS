@@ -127,16 +127,37 @@
         plugins = [ "git" "sudo" "history" ];
       };
     };
+
+
     programs.nix-ld = {
       enable = true;
       libraries = with pkgs; [
-        stdenv.cc.cc
+       stdenv.cc.cc
         zlib
         SDL2
+        SDL2_image
+        SDL2_mixer
+        SDL2_ttf
+        
         libGL
         libx11
+        libxext
+        libxrandr
+        libxcursor
+        libxi
+        libglvnd
+        glib
+        gcc-unwrapped
+        
+        # Add these for VizDoom
+        libsndfile
+        libpng
+        libjpeg
+        freetype
+        fontconfig
       ];
     };
+
 
     programs.starship = {
       enable = true;
@@ -197,7 +218,7 @@
       wireshark rpi-imager putty openssh bind nettools
       xwayland-satellite playerctl brightnessctl cage
       papirus-icon-theme gnome-themes-extra metasploit
-      nmap inetutils
+      nmap inetutils cmake boost SDL2 SDL2_image SDL2_mixer
     ];
 
     system.stateVersion = "25.11";
