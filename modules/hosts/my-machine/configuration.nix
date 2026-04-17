@@ -174,6 +174,9 @@
     services.printing.enable = true;
     services.udev.packages = with pkgs; [ rpi-imager ];
 
+    services.gvfs.enable = true;
+    services.tumbler.enable = true;  # thumbnails for thunar
+
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
     nixpkgs.config.allowUnfree = true;
 
@@ -183,7 +186,7 @@
       zlib fuse3 icu nss openssl expat
       python3 python3Packages.pip python3Packages.virtualenv
       nodejs jdk17 maven gradle uv go gcc
-      brave postgresql_16
+      brave postgresql_16 
       nftables tcpdump nmap bettercap netcat
       wireshark rpi-imager putty openssh bind nettools
       xwayland-satellite playerctl brightnessctl cage
