@@ -74,6 +74,7 @@
           "Mod+Tab".focus-workspace-down = {};
           "Mod+Shift+Tab".focus-workspace-up = {};
           "Mod+O".toggle-overview = {};
+          "Mod+N".spawn-sh = "thunar";
 
           # Audio
           "XF86AudioRaiseVolume".spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";

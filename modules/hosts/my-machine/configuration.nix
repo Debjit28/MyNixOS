@@ -188,7 +188,9 @@
       wireshark rpi-imager putty openssh bind nettools
       xwayland-satellite playerctl brightnessctl cage
       papirus-icon-theme gnome-themes-extra metasploit
-      nmap inetutils 
+      nmap inetutils gvfs thunar xfce.thunar-volman 
+      xfce.thunar-archive-plugin 
+      tumbler pavucontrol nwg-look baobab  
     ];
 
     system.stateVersion = "25.11";
