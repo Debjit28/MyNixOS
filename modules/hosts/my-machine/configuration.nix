@@ -186,7 +186,7 @@
       zlib fuse3 icu nss openssl expat
       python3 python3Packages.pip python3Packages.virtualenv
       nodejs jdk17 maven gradle uv go gcc
-      brave postgresql_16 
+      brave postgresql_16 isc-dhcp
       nftables tcpdump nmap bettercap netcat
       wireshark rpi-imager putty openssh bind nettools
       xwayland-satellite playerctl brightnessctl cage
