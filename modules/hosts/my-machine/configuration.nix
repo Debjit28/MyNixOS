@@ -186,14 +186,14 @@
       zlib fuse3 icu nss openssl expat
       python3 python3Packages.pip python3Packages.virtualenv
       nodejs jdk17 maven gradle uv go gcc
-      brave postgresql_16 isc-dhcp
+      brave postgresql_16 dhcpcd
       nftables tcpdump nmap bettercap netcat
       wireshark rpi-imager putty openssh bind nettools
       xwayland-satellite playerctl brightnessctl cage
       papirus-icon-theme gnome-themes-extra metasploit
       nmap inetutils gvfs thunar xfce.thunar-volman 
       xfce.thunar-archive-plugin  
-      tumbler pavucontrol nwg-look baobab  
+      tumbler pavucontrol nwg-look baobab
     ];
 
     system.stateVersion = "25.11";
