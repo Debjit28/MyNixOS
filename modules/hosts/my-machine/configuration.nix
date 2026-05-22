@@ -185,7 +185,8 @@
       lf htop fastfetch vscode git blueman bluez
       unzip unrar wget curl docker-compose starship
       zlib fuse3 icu nss openssl expat
-      python3 python3Packages.pip python3Packages.virtualenv
+      python313 python313Packages.pip python313Packages.virtualenv
+      python313Packages.scapy
       nodejs jdk17 maven gradle uv go gcc
       brave postgresql_16 dhcpcd
       nftables tcpdump nmap bettercap netcat
@@ -195,6 +196,7 @@
       nmap inetutils gvfs thunar xfce.thunar-volman 
       xfce.thunar-archive-plugin  
       tumbler pavucontrol nwg-look baobab
+
     ];
 
     system.stateVersion = "25.11";
