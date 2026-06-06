@@ -186,9 +186,9 @@
       unzip unrar wget curl docker-compose starship
       zlib fuse3 icu nss openssl expat
       python313 python313Packages.pip python313Packages.virtualenv
-      python313Packages.scapy
+      python313Packages.scapy ipscan python313Packages.requests
       nodejs jdk17 maven gradle uv go gcc
-      brave postgresql_16 dhcpcd
+      brave postgresql_16 dhcpcd gnumake
       nftables tcpdump nmap bettercap netcat
       wireshark rpi-imager putty openssh bind nettools
       xwayland-satellite playerctl brightnessctl cage
