@@ -194,7 +194,7 @@
       xwayland-satellite playerctl brightnessctl cage
       papirus-icon-theme gnome-themes-extra metasploit
       nmap inetutils gvfs thunar xfce.thunar-volman 
-      xfce.thunar-archive-plugin figma-linux
+      xfce.thunar-archive-plugin antigravity-fhs
       tumbler pavucontrol nwg-look baobab
 
     ];
