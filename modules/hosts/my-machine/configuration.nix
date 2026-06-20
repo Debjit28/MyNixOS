@@ -195,6 +195,7 @@
       papirus-icon-theme gnome-themes-extra metasploit
       nmap inetutils gvfs thunar xfce.thunar-volman 
       xfce.thunar-archive-plugin antigravity-fhs
+      obs-studio
       tumbler pavucontrol nwg-look baobab
 
     ];
