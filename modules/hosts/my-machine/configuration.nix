@@ -195,7 +195,7 @@
       papirus-icon-theme gnome-themes-extra metasploit
       nmap inetutils gvfs thunar xfce.thunar-volman 
       xfce.thunar-archive-plugin antigravity-fhs
-      obs-studio, code-cursor
+      obs-studio code-cursor
       tumbler pavucontrol nwg-look baobab
 
     ];
