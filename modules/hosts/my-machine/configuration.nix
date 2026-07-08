@@ -170,6 +170,11 @@
       package = pkgs.postgresql_16;
       dataDir = "/var/lib/postgresql/16";
     };
+    
+    services.mongodb = {
+      enable = true;
+      package = pkgs.mongodb-ce;
+    };
 
     services.flatpak.enable = true;
     services.printing.enable = true;
@@ -197,6 +202,9 @@
       xfce.thunar-archive-plugin antigravity-fhs
       obs-studio code-cursor
       tumbler pavucontrol nwg-look baobab
+      mongodb-ce
+      mongosh
+      mongodb-compass
 
     ];
 
