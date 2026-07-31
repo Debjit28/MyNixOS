@@ -32,7 +32,7 @@
     services.greetd = {
       enable = true;
       settings.default_session = {
-        command = "${pkgs.cage}/bin/cage -s -- ${pkgs.greetd.regreet}/bin/regreet";
+        command = "${pkgs.cage}/bin/cage -s -- ${pkgs.regreet}/bin/regreet";
         user = "greeter";
       };
     };
@@ -198,13 +198,15 @@
       wireshark rpi-imager putty openssh bind nettools
       xwayland-satellite playerctl brightnessctl cage
       papirus-icon-theme gnome-themes-extra metasploit
-      nmap inetutils gvfs thunar xfce.thunar-volman 
-      xfce.thunar-archive-plugin antigravity-fhs
+      nmap inetutils gvfs thunar
+      thunar-volman
+      thunar-archive-plugin 
+      antigravity-ide-fhs
       obs-studio code-cursor
       tumbler pavucontrol nwg-look baobab
       mongodb-ce
       mongosh
-      mongodb-compass
+      google-chrome
 
     ];
 
