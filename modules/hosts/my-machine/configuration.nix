@@ -207,6 +207,15 @@
       mongodb-ce
       mongosh
       google-chrome
+      autopsy
+      sleuthkit
+      ewf-tools
+      guymager
+      dc3dd
+      testdisk
+      foremost
+      bulk_extractor
+      exiftool
 
     ];
 
