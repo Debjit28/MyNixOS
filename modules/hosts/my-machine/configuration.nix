@@ -249,6 +249,15 @@
       python313Packages.python-dotenv
       mkcert
       dbeaver-bin
+      python313Packages.redis
+      python313Packages.arq
+      python313Packages.passlib
+      python313Packages.bcrypt
+      python313Packages.joserfc
+      python313Packages.alembic
+      python313Packages.httpx
+      python313Packages.python-multipart
+      python313Packages.reportlab
       python313Packages.pytest
       python313Packages.pytest-asyncio   
       python313Packages.email-validator
