@@ -250,7 +250,7 @@
       mkcert
       dbeaver-bin
       python313Packages.redis
-      python313Packages.arq
+      python313Packages.rq
       python313Packages.passlib
       python313Packages.bcrypt
       python313Packages.joserfc
