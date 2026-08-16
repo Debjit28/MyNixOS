@@ -12,7 +12,7 @@
 
     networking.hostName = "MrFool";
     networking.networkmanager.enable = true;
-    networking.firewall.allowedTCPPorts = [ 22 ];
+    networking.firewall.allowedTCPPorts = [ 22 80];
 
     time.timeZone = "Asia/Kolkata";
     i18n.defaultLocale = "en_IN";
@@ -165,16 +165,42 @@
 
     virtualisation.docker.enable = true;
 
-    services.postgresql = {
-      enable = true;
-      package = pkgs.postgresql_16;
-      dataDir = "/var/lib/postgresql/16";
-    };
     
     services.mongodb = {
       enable = true;
       package = pkgs.mongodb-ce;
     };
+
+
+    services.postgresql = {
+      enable = true;
+      package = pkgs.postgresql_16;
+      dataDir = "/var/lib/postgresql/16";
+      enableTCPIP = true;
+      authentication = pkgs.lib.mkOverride 10 ''
+      local all all trust
+      host  all all 127.0.0.1/32 trust
+      host  all all 172.17.0.0/16 md5 '';
+    };
+
+    services.redis.servers."" = {
+     enable = true;
+     port = 6379;
+    };
+
+
+  services.nginx = {
+    enable = true;
+    virtualHosts."localhost" = {
+      locations."/" = {
+        proxyPass = "http://127.0.0.1:8000"; # your FastAPI/uvicorn port
+        proxyWebsockets = true;
+      };
+    };
+  };
+
+    
+    
 
     services.flatpak.enable = true;
     services.printing.enable = true;
@@ -212,7 +238,17 @@
       foremost
       bulk_extractor
       exiftool
-
+      python313Packages.fastapi
+      python313Packages.uvicorn
+      python313Packages.sqlalchemy
+      python313Packages.asyncpg
+      python313Packages.psycopg2
+      python313Packages.pymongo
+      python313Packages.motor
+      python313Packages.pydantic
+      python313Packages.python-dotenv
+      mkcert
+      dbeaver-bin
     ];
 
     system.stateVersion = "25.11";
