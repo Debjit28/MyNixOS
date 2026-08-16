@@ -249,6 +249,12 @@
       python313Packages.python-dotenv
       mkcert
       dbeaver-bin
+      python313Packages.pytest
+      python313Packages.pytest-asyncio   
+      python313Packages.email-validator
+      python313Packages.pydantic-settings
+      python313Packages.tenacity 
+      python313Packages.uvloop
     ];
 
     system.stateVersion = "25.11";
