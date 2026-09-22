@@ -189,18 +189,14 @@
     };
     services.nginx = {
       enable = true;
-      additionalModules = [
-        pkgs.nginxModules.modsecurity
-      ];
       # Normal development
       virtualHosts."localhost" = {
         locations."/" = {
           proxyPass = "http://127.0.0.1:8000";
           proxyWebsockets = true;
         };
+      };
     };
-    
-};
     
     
 
@@ -266,9 +262,6 @@
       python313Packages.pydantic-settings
       python313Packages.tenacity 
       python313Packages.uvloop
-      libmodsecurity
-      modsecurity-crs
-      nginx
     ];
 
     system.stateVersion = "25.11";
