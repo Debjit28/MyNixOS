@@ -199,21 +199,7 @@
           proxyWebsockets = true;
         };
     };
-    # Lab 5 - WAF
-    virtualHosts."waf-lab" = {
-      listen = [
-        {
-          addr = "127.0.0.1";
-          port = 8085;
-        }
-      ];
-    locations."/" = {
-      extraConfig = ''
-      modsecurity on;
-      modsecurity_rules_file /home/mr_fool/os_lab/lab_5/waf.conf;
-      '';
-    };
-  };
+    
 };
     
     
