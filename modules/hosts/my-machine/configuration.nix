@@ -187,18 +187,31 @@
      enable = true;
      port = 6379;
     };
-
-services.nginx = {
-  enable = true;
-
-  additionalModules = [
-    pkgs.nginxModules.modsecurity
-  ];
-
-  virtualHosts."localhost" = {
+    services.nginx = {
+      enable = true;
+      additionalModules = [
+        pkgs.nginxModules.modsecurity
+      ];
+      # Normal development
+      virtualHosts."localhost" = {
+        locations."/" = {
+          proxyPass = "http://127.0.0.1:8000";
+          proxyWebsockets = true;
+        };
+    };
+    # Lab 5 - WAF
+    virtualHosts."waf-lab" = {
+      listen = [
+        {
+          addr = "127.0.0.1";
+          port = 8085;
+        }
+      ];
     locations."/" = {
-      proxyPass = "http://127.0.0.1:8000";
-      proxyWebsockets = true;
+      extraConfig = ''
+      modsecurity on;
+      modsecurity_rules_file /home/mr_fool/os_lab/lab_5/waf.conf;
+      '';
     };
   };
 };
