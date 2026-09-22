@@ -264,6 +264,8 @@
       python313Packages.pydantic-settings
       python313Packages.tenacity 
       python313Packages.uvloop
+      libmodsecurity
+      modsecurity-crs
     ];
 
     system.stateVersion = "25.11";
