@@ -143,6 +143,11 @@
 
     programs.wireshark.enable = true;
     programs.nix-ld.enable = true;
+    
+    programs.appimage = {
+      enable = true;
+      binfmt = true;
+    };
 
     hardware.bluetooth = {
       enable = true;
@@ -262,6 +267,12 @@
       python313Packages.pydantic-settings
       python313Packages.tenacity 
       python313Packages.uvloop
+      autopsy
+      sleuthkit
+      parted
+      dosfstools
+      util-linux
+      appimage-run
     ];
 
     system.stateVersion = "25.11";
